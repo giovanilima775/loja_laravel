@@ -25,3 +25,17 @@ Route::get('/', HomeComponent::class)->name('index');
 Route::get('/shop', ShopComponent::class)->name('shop');
 Route::get('/cart', CartComponent::class)->name('cart');
 Route::get('/checkout', CheckoutComponent::class)->name('checkout');
+
+// Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+//     return view('dashboard');
+// })->name('dashboard');
+
+// For customer
+Route::middleware(['auth:sanctum', 'verified'])->group(function () {
+
+});
+// For Admin
+Route::middleware(['auth:sanctum', 'verified'])->group(function () {
+
+});
+
