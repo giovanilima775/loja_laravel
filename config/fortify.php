@@ -64,11 +64,12 @@ return [
 
     'home' => function () {
         $userType = Auth::user()->utype;
-
         if ($userType === 'ADM') {
-                return '/admin/dashboard';
+            session(['utype' => 'ADM']);
+            return '/admin/dashboard';
         } else {
-            return '/user';
+            session(['utype' => 'USR']);
+            return '/user/dashboard';
         }
     },
 
